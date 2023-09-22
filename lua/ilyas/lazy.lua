@@ -33,6 +33,7 @@ return require('lazy').setup({
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
     { "folke/zen-mode.nvim" },
+    { "shortcuts/no-neck-pain.nvim", version = "*"},
 
     -- Project
     'tpope/vim-fugitive',
