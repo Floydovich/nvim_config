@@ -12,18 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
-    -- Colorschemes
-    { 'catppuccin/nvim', as = 'catppuccin' },
-    {
-        'AlexvZyl/nordic.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require 'nordic' .load()
-        end
-    },
 
-    -- Visual
+    { 'catppuccin/nvim', as = 'catppuccin' },
+
+    -- Misc
+    "folke/zen-mode.nvim",
+    'numToStr/Comment.nvim',
+    'Pocco81/auto-save.nvim',
+    'theprimeagen/harpoon',
+    'tpope/vim-fugitive',
+
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
@@ -32,12 +30,8 @@ return require('lazy').setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
-    { "folke/zen-mode.nvim" },
     { "shortcuts/no-neck-pain.nvim", version = "*"},
 
-    -- Project
-    'tpope/vim-fugitive',
-    'theprimeagen/harpoon',
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
@@ -63,8 +57,4 @@ return require('lazy').setup({
             {'L3MON4D3/LuaSnip'},     -- Required
         }
     },
-
-    -- Misc
-    { 'Pocco81/auto-save.nvim' },
-    { 'numToStr/Comment.nvim' },
 })

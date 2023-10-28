@@ -48,10 +48,8 @@ vim.keymap.set('t', '<A-k>', [[<C-\><C-N><C-w>k]])
 vim.keymap.set('t', '<A-l>', [[<C-\><C-N><C-w>l]])
 
 -- Center, split and create terminal
-vim.keymap.set("n", "<leader>te",function ()
+vim.keymap.set("n", "<leader>nn",function ()
     vim.cmd.NoNeckPain()
-    vim.cmd.split()
-    vim.cmd.resize(40)
-    vim.cmd.wincmd('j')
-    vim.cmd.terminal()
+    -- vim.cmd.wincmd('l')
+    -- vim.cmd.terminal()
 end)
