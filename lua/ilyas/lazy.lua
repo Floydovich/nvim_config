@@ -15,27 +15,34 @@ return require('lazy').setup({
 
     { 'catppuccin/nvim', as = 'catppuccin' },
 
-    -- Misc
-    "folke/zen-mode.nvim",
     'numToStr/Comment.nvim',
     'Pocco81/auto-save.nvim',
     'theprimeagen/harpoon',
     'tpope/vim-fugitive',
-
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-    },
+    { "shortcuts/no-neck-pain.nvim", version = "*"},
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
-    { "shortcuts/no-neck-pain.nvim", version = "*"},
+
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        config = true,
+    },
 
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
     },
     {
         'VonHeikemen/lsp-zero.nvim',
