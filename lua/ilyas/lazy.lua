@@ -13,18 +13,32 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
 
-    { 'catppuccin/nvim', as = 'catppuccin' },
-
-    'numToStr/Comment.nvim',
-    'Pocco81/auto-save.nvim',
-    'theprimeagen/harpoon',
-    'tpope/vim-fugitive',
+    -- Colors and visual
+    "rebelot/kanagawa.nvim",
     { "shortcuts/no-neck-pain.nvim", version = "*"},
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+    },
 
+    -- Project
+    'theprimeagen/harpoon',
+    'tpope/vim-fugitive',
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
+
+    -- Misc
+    'numToStr/Comment.nvim',
+    'Pocco81/auto-save.nvim',
+
+    -- Language specific
     {
         'akinsho/flutter-tools.nvim',
         lazy = false,
@@ -35,15 +49,7 @@ return require('lazy').setup({
         config = true,
     },
 
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim'} }
-    },
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-    },
+    -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',

@@ -1,10 +1,10 @@
-require('catppuccin').setup({
-    flavour = 'mocha', -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = 'latte',
-        dark = 'mocha',
+-- Default options:
+require('kanagawa').setup({
+    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    background = {               -- map the value of 'background' option to a theme
+        dark = "wave",           -- try "dragon" !
+        light = "lotus"
     },
 })
 
-vim.opt.termguicolors = true
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'kanagawa'
