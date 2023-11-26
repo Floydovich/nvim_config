@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or 'all' (the five listed parsers should always be installed)
-    ensure_installed = { 'lua', 'python', 'javascript', 'typescript', 'rust', 'elixir' },
+    ensure_installed = { 'lua', 'python', 'javascript', 'typescript', 'dart' },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -13,7 +13,8 @@ require'nvim-treesitter.configs'.setup {
         -- `false` will disable the whole extension
         enable = true,
 
-        disable = { "c", "rust" },
+        disable = { },
     },
-    indent = { enable = true },
+    -- If enabled make Dart code to freeze on hitting Enter
+    indent = { enable = false },
 }
